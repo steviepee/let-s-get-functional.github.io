@@ -22,7 +22,9 @@ var _ = require('underbar');
  */
 
 var maleCount = function(array) {
-//iterate over array of customers
+array.reduce(array, () => {
+    
+})
 };
 
 var femaleCount;
