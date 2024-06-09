@@ -41,27 +41,41 @@ var maleCount = function(array) {
 
 
 var femaleCount = function(array) {
+  //use reduce to find the number of qualifying customers
+  //have a variable stand as the result of reduce resolving
  let count = array.reduce(function (accum, current) {
+  //if the gender of the customer is female
   if (current.gender === 'female') {
+    //add one to the accumulator count
     accum += 1;
-  }
+  }//at the end of the loop, return the accumulated number
   return accum;
- }, 0);
+ }, 0);//return the stand in variable
  return count;
-};
+}
 
+var oldestCustomer = (array) => {
+  // *fund the oldest customer's name.. no requirements
+  //use reduce to iterate over the array. give the result a variable
+  let fogie = array.reduce((oldest, other) => {
+    //if other is older than the oldest, change oldest to that name, otherwise it remains the same
+    return other.age > oldest.age ? oldest = other : oldest = oldest;
+    //at the end of the loop, return the oldest customer's info
+    return oldest;
+  })//return the oldest object's name
+  return fogie.name; 
+}
 
-//  function d(before, current,) {
-// if (current.gender = 'female') {
-//   before += 1;
-// }
-// return before;
-//  }
-//}
-// use reduce
-var oldestCustomer;
-
-var youngestCustomer;
+var youngestCustomer = (array) => {
+  //set a variable to the result of casting reduce on the array with callback fctn
+  let youngster = array.reduce((youngest, other) => {
+    //if other is younger than the youngest, change youngest to that name, otherwise it remains the same
+    return other.age < youngest.age ? youngest = other : youngest = youngest;
+    //at the end of the loop, return the youngest customer's info
+    return oldest;
+  })//return the youngest object's name
+  return youngster.name; 
+}
 
 var averageBalance;
 
