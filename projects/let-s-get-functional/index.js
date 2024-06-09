@@ -40,8 +40,25 @@ var maleCount = function(array) {
     }
 
 
-var femaleCount;
+var femaleCount = function(array) {
+ let count = array.reduce(function (accum, current) {
+  if (current.gender === 'female') {
+    accum += 1;
+  }
+  return accum;
+ }, 0);
+ return count;
+};
 
+
+//  function d(before, current,) {
+// if (current.gender = 'female') {
+//   before += 1;
+// }
+// return before;
+//  }
+//}
+// use reduce
 var oldestCustomer;
 
 var youngestCustomer;
