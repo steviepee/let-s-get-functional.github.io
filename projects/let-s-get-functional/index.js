@@ -93,13 +93,13 @@ var firstLetterCount = (array, letter) => {
 //use reduce to iterate over the array to check for the letter
 let number = array.reduce((tally, current) => {
   //if the current object's name starts with the specified letter(case insensetive)...
-  return current.name[0].toUpperCase() === letter.toUpperCase() ? tally += 1 : tally = tally;
+  return current.name[0].toUpperCase() === letter.toUpperCase() ? tally += 1 : tally;
   // at the end of the loop, return the number of hits
   return tally;
 }, 0)//return the beginning variable
 return number;
 }
-
+//find how many of a customer's friends names start with a given letter (array, customer, letter)
 var friendFirstLetterCount;
 
 var friendsCount;
