@@ -80,16 +80,25 @@ var youngestCustomer = (array) => {
 var averageBalance = array => {
   //use reduce to find the total balance of all customers
   let total = array.reduce((tally, current) => {
-    //simply add the current objcet' balance to the tally until the end of the loop
+    //simply add the current objcet's balance to the tally until the end of the loop
     tally += current.balance;
     //return the final tally
     return tally;
-  });
+  }, 0);
   //return the total balance divided by the number of customers
   return total / array.length - 1;
 }
-
-var firstLetterCount;
+//how many customers names begin with a certain letter
+var firstLetterCount = (array, letter) => {
+//use reduce to iterate over the array to check for the letter
+let number = array.reduce((tally, current) => {
+  //if the current object's name starts with the specified letter(case insensetive)...
+  return current.name[0].toUpperCase() === letter.toUpperCase() ? tally += 1 : tally = tally;
+  // at the end of the loop, return the number of hits
+  return tally;
+}, 0)//return the beginning variable
+return number;
+}
 
 var friendFirstLetterCount;
 
