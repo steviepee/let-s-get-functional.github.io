@@ -76,8 +76,18 @@ var youngestCustomer = (array) => {
   })//return the youngest object's name
   return youngster.name; 
 }
-
-var averageBalance;
+//average balance of all customers
+var averageBalance = array => {
+  //use reduce to find the total balance of all customers
+  let total = array.reduce((tally, current) => {
+    //simply add the current objcet' balance to the tally until the end of the loop
+    tally += current.balance;
+    //return the final tally
+    return tally;
+  });
+  //return the total balance divided by the number of customers
+  return total / array.length - 1;
+}
 
 var firstLetterCount;
 
