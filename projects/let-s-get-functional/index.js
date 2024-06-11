@@ -2,6 +2,7 @@
 
 'use strict';
 
+const { result } = require('lodash');
 var customers = require('./data/customers.json');
 var _ = require('underbar');
 
@@ -127,8 +128,25 @@ var friendFirstLetterCount = (array, customer, letter) => {
     }
   }
 }
-
-var friendsCount;
+//
+var friendsCount = (Array, Name) => {
+  //create a storage array
+  let sto = [];
+//iterate over the array
+for (let i = 0; i < Array.length; i++) {
+  //create a variable for the current object's friends array
+  let buds = Array[i].friends;
+  //iterate through friends array
+  for (let a = 0; a < buds.length; a++) {
+    //if a name here matches the argument
+    if (buds[a] === Name) {
+      //push the object into the storage array
+      sto.push(buds[a]);
+    }
+  }
+  }//return the storage array
+  return sto
+  }
 
 var topThreeTags;
 
