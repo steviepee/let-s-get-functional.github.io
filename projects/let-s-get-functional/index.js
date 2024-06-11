@@ -79,14 +79,20 @@ var youngestCustomer = (array) => {
 //average balance of all customers
 var averageBalance = array => {
   //use reduce to find the total balance of all customers
-  let total = array.reduce((tally, current) => {
-    //simply add the current objcet's balance to the tally until the end of the loop
-    tally += current.balance;
+  let total = array.reduce((tally=0, current) => {
+    //remove the dollar sign from the string of the balance. Give it a variable
+    let money = current.balance.substring(1, current.balance.length);
+    //remove all commas from the string. Make that a variable as well
+    let dough = money.replace(/,/g, '');
+    //turn the remaining string into a number
+    let cash = Number(dough);
+// add the current objcet's balance to the tally until the end of the loop
+    return tally += cash;
     //return the final tally
     return tally;
   }, 0);
   //return the total balance divided by the number of customers
-  return total / array.length - 1;
+  return total / array.length;
 }
 //how many customers names begin with a certain letter
 var firstLetterCount = (array, letter) => {
