@@ -98,7 +98,7 @@ var averageBalance = array => {
 var firstLetterCount = (array, letter) => {
 //use reduce to iterate over the array to check for the letter
 let number = array.reduce((tally, current) => {
-  //if the current object's name starts with the specified letter(case insensetive)...
+  //if the current object's name starts with the specified letter(case insensetive) add one to the tally, if not, leave the tally alone
   return current.name[0].toUpperCase() === letter.toUpperCase() ? tally += 1 : tally;
   // at the end of the loop, return the number of hits
   return tally;
@@ -112,9 +112,21 @@ var friendFirstLetterCount = (array, customer, letter) => {
   for (let i = 0; i < array.length; i++) {
     //if the object's name property is the same as the argument name
     if (array[i].name === customer) {
-      //use reduce to iterate over the friends array and find the names that start with the given letter
+      //make a variable to denote this object's friends array
+      let buds = array[i].friends;
+      //use reduce to iterate over the friends array and find the names that start with the given letter.
+      //give the result a variable
+      let number = buds.reduce((tally, current) => {
+      //if the current index starts with the given number, add one to the tally, if not, leave the tally alone
+      return current.name[0].toUpperCase() === letter.toUpperCase() ? tally += 1 : tally;
+      //when the loop ends, return the number of hits
+      return tally;
+      }, 0)
+      //return the reduce variable
+      return number;
     }
   }
+}
 
 var friendsCount;
 
