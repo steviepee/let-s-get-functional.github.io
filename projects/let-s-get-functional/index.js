@@ -108,8 +108,13 @@ return number;
 //find how many of an object's friends names start with given letter (array, customer, letter)
 //case insensetive
 var friendFirstLetterCount = (array, customer, letter) => {
-  //
-}
+  //iterate over the array
+  for (let i = 0; i < array.length; i++) {
+    //if the object's name property is the same as the argument name
+    if (array[i].name === customer) {
+      //use reduce to iterate over the friends array and find the names that start with the given letter
+    }
+  }
 
 var friendsCount;
 
