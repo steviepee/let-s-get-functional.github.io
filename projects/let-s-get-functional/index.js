@@ -106,7 +106,9 @@ let number = array.reduce((tally, current) => {
 return number;
 }
 //find how many of a customer's friends names start with a given letter (array, customer, letter)
-var friendFirstLetterCount;
+var friendFirstLetterCount = (array, customer, letter) => {
+  //
+}
 
 var friendsCount;
 
