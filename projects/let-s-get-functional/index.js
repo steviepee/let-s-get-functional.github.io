@@ -139,16 +139,23 @@ for (let i = 0; i < Array.length; i++) {
   //iterate through friends array
   for (let a = 0; a < buds.length; a++) {
     //if a name here matches the argument
-    if (buds[a] === Name) {
+    if (buds[a].name === Name) {
       //push the object into the storage array
-      sto.push(buds[a]);
+      sto.push(Array[i].name);
     }
   }
   }//return the storage array
   return sto
   }
 
-var topThreeTags;
+var topThreeTags = function(array) {
+//create output array
+let output = [];
+
+
+//return output array
+return output;
+}
 
 var genderCount;
 
