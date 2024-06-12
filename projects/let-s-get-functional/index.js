@@ -149,15 +149,44 @@ for (let i = 0; i < Array.length; i++) {
   }
 
 var topThreeTags = function(array) {
-//create output array
+//create storage array
+let sto = [];
+//create holding object
+let check = {};
+  //create output array
 let output = [];
+//iterate through the array
+for (let i = 0; i < array.length; i++) {
+  //iterate over the tags array of each object
+  for (let a = 0; a < array[i].tags.length; a++) {
+    //place all values into the storage array
+    sto.push(array[i].tags[a]);
+  }
+}//now that we have all the arrays together, iterate through the storage array
+for (let i = 0; i < sto.length; i++) {
+  //for each value, check if it's been placed as a key of the holding object
+check.hasOwnProperty(sto[i]) ? check[sto[i]] = check[sto[i]] + 1 : check[sto[i]] = 1;
 
-
+}//make sto into a new empty array
+sto = [];
+//now that check holds the key value pairs, re-form the pairs into nested arrays
+let newSto =(Object.entries(check).sort());
+//sort the nests highest to lowest
+//take the first three values and push them into the output array
+output.push(newSto[0][0]);
+output.push(newSto[1][0]);
+output.push(newSto[2][0]);
 //return output array
 return output;
 }
 
-var genderCount;
+var genderCount = function(array) {
+  //iterate over the array
+  for (i = 0; i < array.length; i++) {
+    //for each object, log its gender value..
+    //have the gender value be the key and the amount of times it appears in the array be the value
+  }
+} 
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
