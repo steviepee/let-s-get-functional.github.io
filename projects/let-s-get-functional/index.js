@@ -175,7 +175,7 @@ let newSto =(Object.entries(check).sort());
 //take the first three values and push them into the output array
 output.push(newSto[0][0]);
 output.push(newSto[1][0]);
-output.push(newSto[10][0]);
+output.push(newSto[newSto.length - 2][0]);
 //return output array
 return output;
 }
@@ -185,15 +185,15 @@ var genderCount = function(array) {
   let sto = [];
   //create an output object
   let output = {};
-  //iterate over the array
+  //iterate over the array of objects
   for (let i = 0; i < array.length; i++) {
-    //for each object, store its gender value
+    //for each object, store its gender value in the storage array
     sto.push(array[i].gender);
   }
   //iterate over the storage array
   for (let i = 0; i < sto.length; i++) {
   //for each value, if they've occured add to the tally, if not, set it to 1 in key value pairs
-  output.hasOwnProperty(array[i]) ? output[array[i]] = output[array[i]] + 1 : output[array[i]] = 1;
+  output.hasOwnProperty(array[i].gender) ? output[array[i].gender] = output[array[i].gender] + 1 : output[array[i].gender] = 1;
     }  //return the output object;
   return output;
 } 
